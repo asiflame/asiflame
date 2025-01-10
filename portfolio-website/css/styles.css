@@ -1,0 +1,378 @@
+:root {
+    --bg-primary: #060311;
+    --accent-1: rgba(123, 74, 255, 0.1);
+    --accent-2: rgba(255, 99, 195, 0.1);
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(
+        125deg,
+        var(--bg-primary),
+        var(--accent-1),
+        var(--accent-2),
+        var(--bg-primary)
+    );
+    background-size: 600% 600%;
+    animation: gradient-animation 15s ease infinite;
+    transition: background 1.3s ease; /* Shorter transition */
+}
+
+body.transition-gray {
+    animation: none;
+    background: #808080; /* Gris transitorio */
+}
+
+body.transition-black {
+    animation: none;
+    background: #121212; /* Negro final */
+}
+
+/* Add noise overlay */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/></svg>');
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+@font-face {
+    font-family: 'Chopin';
+    src: url('../fonts/Chopin-Trial-Bold-BF65b1d691a55be.otf') format('truetype');
+    font-weight: bold; /* Make Chopin font bold */
+    font-style: normal;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;    
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    perspective: 1px;
+}
+
+.section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.hero {
+    transform: translateZ(-1px) scale(2);
+}
+
+.hero-text {
+    font-family: 'Chopin', 'Playfair Display', serif;
+    text-align: center;
+    padding: 80px 20px;
+    width: 100%;
+    max-width: 1200px; /* Limit width */
+    margin: 0 auto; /* Center horizontally */
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateZ(0);
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #a7a7a7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+
+}
+
+.section-black {
+    position: relative;
+    z-index: 1;
+}
+
+.pre-container {
+    position: absolute;
+    top: 50%;
+    left: 15%; /* Adjust as needed */
+    transform: translateY(-50%);
+    width: 500px; /* Smaller card size */
+    height: auto;
+}
+
+pre {
+    --selector: var(--pink);
+    --property: var(--teal);
+    --punctuation: var(--white);
+    
+    font-size: 1.5rem; /* Reduce font size */
+    font-weight: bold;
+    background: hsl(222, 45%, 7%);
+    padding: 1rem; /* Adjust padding for smaller block */
+    border-radius: 1rem;
+    transform-style: preserve-3d;
+    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+    width: 100%;
+    text-align: left; /* Align text to the left */
+    color: white; /* Set text color to white */
+}
+
+pre::before,
+pre::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+pre::before {
+    inset: 0.75rem;
+    background: linear-gradient(to right, #fff, #a7a7a7);
+    z-index: -1;
+    transform: translateZ(-50px);
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+pre::after {
+    inset: -1rem;
+    background: linear-gradient(-45deg, rgb(140, 0, 255), blue);
+    transform: translateZ(-50px);
+    z-index: -2;
+}
+
+code {
+    font-size: 1.5rem;
+    font-family: 'Chopin', 'Playfair Display', serif;
+    color: white; /* Set text color to white */
+}
+
+.github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.github-link {
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.github-avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    position: relative;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        rgba(255, 255, 255, 0.1) 40%, 
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    box-shadow: 
+        0 0 25px rgba(255, 255, 255, 0.2),
+        0 0 50px rgba(255, 255, 255, 0.1),
+        0 0 75px rgba(255, 255, 255, 0.05),
+        0 0 30px rgba(255, 255, 255, 0.1) inset;
+    animation: avatarGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes avatarGlow {
+    from {
+        box-shadow: 
+            0 0 25px rgba(255, 255, 255, 0.2),
+            0 0 50px rgba(255, 255, 255, 0.1),
+            0 0 75px rgba(255, 255, 255, 0.05),
+            0 0 30px rgba(255, 255, 255, 0.1) inset;
+    }
+    to {
+        box-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.3),
+            0 0 60px rgba(255, 255, 255, 0.2),
+            0 0 90px rgba(255, 255, 255, 0.1),
+            0 0 40px rgba(255, 255, 255, 0.2) inset;
+    }
+}
+
+.github-avatar:hover {
+    transform: 
+        perspective(1000px)
+        rotateX(10deg)
+        rotateY(-10deg)
+        translateZ(20px);
+    box-shadow: 
+        20px 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.2) inset;
+}
+
+.github-avatar::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.3)
+    );
+    z-index: -1;
+    filter: blur(4px);
+}
+
+.github-icon {
+    color: #fff;
+    font-size: 8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+.github-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+}
+
+.github-icon i {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #a3a3a3,
+                     0 0 20px #b9b9b9,
+                     0 0 30px #5c5c5c;
+    }
+    to {
+        text-shadow: 0 0 20px #272727,
+                     0 0 30px #505050,
+                     0 0 40px #e0e0e0;
+    }
+}
+
+.section-languages {
+    position: relative;
+    height: auto; /* Allow it to grow based on content */
+    min-height: 60vh; /* Increased minimum height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transform: translateY(-15vh); /* Adjust as needed */
+    background: transparent;
+    margin-top: -20vh; /* Bring section closer to previous section */
+}
+
+.languages-grid {
+    display: flex;
+    gap: 4rem; /* Space between items */
+    padding: 3rem;
+    width: 200%; /* Increased for more width */
+    max-width: none; /* Allow it to exceed the viewport width */
+    transform: rotate(-5deg); /* Keep rotation */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.03);
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center;
+    margin: 0 auto; /* Center the grid */
+    position: relative;
+}
+
+.language-item {
+    min-width: 120px; /* Adjusted to make icons smaller */
+    height: 20vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.language-item i {
+    font-size: clamp(2rem, 4vw, 4rem); /* Adjusted to make icons smaller */
+    color: #fff;
+    margin-bottom: 1.5rem;
+    transition: all 0.5s ease;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.language-item span {
+    font-family: 'Space Grotesk', sans-serif; /* Modern tech font */
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.language-item:hover i {
+    transform: translateY(-10px);
+    filter: brightness(1.2);
+}
