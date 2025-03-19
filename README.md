@@ -1,33 +1,46 @@
-# Portfolio Website
+# ¡Hola, soy Asier Rodríguez Simona! 🚀
 
-This is a simple portfolio website created using HTML, CSS, and JavaScript. It showcases various projects and provides information about the developer.
+Soy un **Desarrollador Web** apasionado por crear experiencias digitales únicas y funcionales. Me especializo en transformar ideas en código limpio, elegante y responsivo, con un toque de creatividad que hace que cada proyecto brille como una estrella en el vasto universo de la web.
 
-## Project Structure
+---
 
-- `index.html`: The main HTML document containing the structure of the webpage, including sections for the portfolio, about, and contact information.
-- `css/styles.css`: The CSS file that defines the layout, colors, fonts, and overall visual appearance of the website.
-- `js/scripts.js`: The JavaScript file that includes functionality for interactive elements, such as form validation, animations, or dynamic content loading.
+## 🌌 Sobre mí
 
-## Getting Started
+- **Ubicación**: Tarragona, España
+- **Formación**: CFGS en Desarrollo de Aplicaciones Web (INS Vidal | Barraquer, 2022-2024)
+- **Experiencia**: Desarrollador Web en Bic Graphic (Oct 2024 - Ene 2025)
+  
+---
 
-To get a local copy up and running, follow these simple steps:
+## 🛠️ Habilidades Técnicas
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/portfolio-website.git
-   ```
+- **Lenguajes**: HTML, CSS, JavaScript, Java
+- **Frameworks y Bibliotecas**: React, Lenis (scroll suave), Node
+- **Herramientas**: Git, VS Code, Figma
+- **Diseño**: Responsive Design, Animaciones CSS, Gradientes cósmicos ✨
+- **Extras**: Optimización de rendimiento, SEO básico
 
-2. Navigate to the project directory:
-   ```
-   cd portfolio-website
-   ```
+---
 
-3. Open `index.html` in your web browser to view the portfolio website.
+## 📡 ¿Qué estoy explorando ahora?
 
-## Contributing
+- Mejorando mis habilidades en **React** y **TypeScript**.
+- Experimentando con **WebGL** para efectos 3D alucinantes.
+- Aprendiendo sobre **accesibilidad web** para que todos puedan navegar mis creaciones.
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+---
 
-## License
+## 💬 Conéctate conmigo
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **Email**: [asierrodriguezsimona@gmail.com](mailto:asierrodriguezsimona@gmail.com)
+- **LinkedIn**: [linkedin.com/in/asierrodriguezsimona](#)
+
+---
+
+## 🌟 Fun Fact
+
+Cuando no estoy programando, me encontrarás jugando videojuegos, haciendo instrumentales de música hiphop o imaginando cómo se vería mi código en una galaxia lejana.
+
+---
+
+*Última actualización: 19 de marzo de 2025*
