@@ -587,13 +587,28 @@ body::after {
 
 /* Tablets and larger phones (up to 768px) */
 @media (max-width: 768px) {
-    body {
-        padding-left: 15px;
-        padding-right: 15px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
     }
-    .nav {
-        display: none;
-    }
+    
+            body {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box;
+                max-width: 100%;
+            }
+        
+        
+    
+        .nav {
+            display: none !important;
+        }
+    
+    
     .nav ul {
         gap: 1rem;
         justify-content: center;
@@ -709,174 +724,243 @@ body::after {
         font-size: 1.5rem;
         margin-top: 2rem;
     }
+
+
+/* Responsive adjustments for tablets (up to 1024px) */
+@media (max-width: 1024px) {
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .contact-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+    }
 }
 
-/* Standard phones (up to 480px) */
-@media (max-width: 480px) {
+/* Tablets and larger phones (up to 768px) */
+@media (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 15px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
     }
+
     .nav {
-        display: none;
+        display: none !important;
     }
-    .nav ul {
-        gap: 0.75rem;
-    }
-    .nav a {
-        font-size: 0.8rem;
-    }
+
     .section {
-        padding: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
     .hero-text {
-        padding: 30px 10px;
+        padding: 40px 10px;
+        text-align: center;
+        width: 100%;
     }
+
     .hero-text h1 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-size: clamp(2rem, 5vw, 3rem);
     }
+
     .hero-text h1::before {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
     }
+
     .hero-text .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .section-languages,
+    .section-programming-languages {
+        padding: 4rem 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .languages-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+        gap: 1rem; /* Reduced gap for better fit */
+        width: 100%;
+        max-width: 100%;
+        justify-items: center; /* Center items in each grid cell */
+    }
+
+    .language-item {
+        padding: 0.75rem; /* Reduced padding to fit 3 items */
+        width: 100%;
+        max-width: 110px; /* Fit 3 items in 390px viewport (390px - 30px padding - 2rem gap ≈ 110px per item) */
+        box-sizing: border-box;
+    }
+
+    .language-item i {
+        font-size: clamp(1.2rem, 2.5vw, 2rem); /* Slightly smaller icons */
+    }
+
+    .language-item span {
+        font-size: clamp(0.7rem, 1vw, 0.9rem); /* Smaller text to fit */
+    }
+
+    .section-projects {
+        padding: 4rem 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .project-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-content p {
         font-size: 0.9rem;
     }
-    .cta-button {
+
+    .section-title {
+        font-size: clamp(2rem, 4vw, 4rem);
+        margin-bottom: 3rem;
+    }
+
+    .section-bento {
+        padding: 4rem 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .bento-item.large {
+        grid-column: auto;
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .bento-item {
+        padding: 1.5rem;
+        min-height: 200px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .bento-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .bento-item p {
+        font-size: 0.9rem;
+    }
+
+    .bento-item i {
+        font-size: 2rem;
+    }
+
+    .section-contact {
+        padding: 4rem 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-layout {
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .cv-card-container {
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .download-cv {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
-    .section-title {
-        font-size: clamp(1.5rem, 3vw, 2.5rem);
-        margin-bottom: 2rem;
-    }
-    .languages-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1rem;
-    }
-    .language-item {
-        padding: 0.75rem;
-    }
-    .language-item i {
-        font-size: clamp(1.2rem, 2.5vw, 2rem);
-    }
-    .language-item span {
-        font-size: clamp(0.7rem, 1vw, 0.9rem);
-    }
-    .project-card,
-    .bento-item {
-        padding: 1rem;
-        min-height: 180px;
-    }
-    .project-content h3,
-    .bento-item h3 {
-        font-size: 1.1rem;
-    }
-    .project-content p,
-    .bento-item p {
-        font-size: 0.85rem;
-    }
-    .bento-item i {
-        font-size: 1.5rem;
-        margin-bottom: 0.75rem;
-    }
-    .cv-card-container {
-        max-width: 300px;
-    }
-    .download-cv {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-    .social-links {
-        gap: 1rem;
-    }
-    .social-icon {
-        font-size: clamp(1.5rem, 3vw, 2.5rem);
-    }
-    .thank-you {
-        font-size: 1.2rem;
-        margin-top: 1.5rem;
-    }
-}
 
-/* Small phones (up to 320px) */
-@media (max-width: 320px) {
-    body {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .nav {
-        display: none;
-    }
-    .nav ul {
-        gap: 0.5rem;
-    }
-    .nav a {
-        font-size: 0.7rem;
-    }
-    .hero-text {
-        padding: 20px 5px;
-    }
-    .hero-text h1 {
-        font-size: clamp(1.2rem, 3.5vw, 2rem);
-    }
-    .hero-text h1::before {
-        width: 100px;
-        height: 100px;
-    }
-    .hero-text .subtitle {
-        font-size: 0.8rem;
-    }
-    .cta-button {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-    .section-title {
-        font-size: clamp(1.2rem, 2.5vw, 2rem);
-    }
-    .languages-grid {
-        grid-template-columns: 1fr;
-    }
-    .language-item {
-        padding: 0.5rem;
-    }
-    .language-item i {
-        font-size: clamp(1rem, 2vw, 1.5rem);
-    }
-    .language-item span {
-        font-size: clamp(0.6rem, 0.9vw, 0.8rem);
-    }
-    .project-card,
-    .bento-item {
-        padding: 0.75rem;
-        min-height: 160px;
-    }
-    .project-content h3,
-    .bento-item h3 {
-        font-size: 1rem;
-    }
-    .project-content p,
-    .bento-item p {
-        font-size: 0.8rem;
-    }
-    .bento-item i {
-        font-size: 1.2rem;
-    }
-    .cv-card-container {
-        max-width: 250px;
-    }
-    .download-cv {
-        padding: 5px 10px;
-        font-size: 0.7rem;
-    }
     .social-links {
-        gap: 0.75rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
     }
+
     .social-icon {
-        font-size: clamp(1.2rem, 2.5vw, 2rem);
+        font-size: clamp(2rem, 4vw, 3rem);
     }
+
     .thank-you {
-        font-size: 1rem;
-        margin-top: 1rem;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
     }
 }
