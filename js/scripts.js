@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particlesArray = [];
-        const numberOfParticles = 50; // Back to a sparse but full-screen count
+        const numberOfParticles = 50; 
 
         // Set canvas size and adjust on resize
         function setCanvasSize() {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: rect.left,
                 y: rect.top,
                 width: rect.width,
-                height: rect.height * 0.6 // Focus on title + subtitle, not full padding
+                height: rect.height * 0.6 
             };
         }
         updateExclusionZone();
@@ -52,11 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
         class Particle {
             constructor() {
                 this.spawnOutsideExclusionZone();
-                this.baseSize = Math.random() * 2 + 1; // Base size 1–3px
+                this.baseSize = Math.random() * 2 + 1; 
                 this.size = this.baseSize;
-                this.speedX = Math.random() * 0.4 - 0.2; // Slow drift
+                this.speedX = Math.random() * 0.4 - 0.2; 
                 this.speedY = Math.random() * 0.4 - 0.2;
-                this.pulseSpeed = Math.random() * 0.05 + 0.02; // Pulse rate
+                this.pulseSpeed = Math.random() * 0.05 + 0.02; 
             }
             spawnOutsideExclusionZone() {
                 do {
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             draw() {
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                ctx.shadowBlur = 10; // Glow effect
+                ctx.shadowBlur = 10; 
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
-                ctx.shadowBlur = 0; // Reset to avoid affecting other drawings
+                ctx.shadowBlur = 0; 
             }
         }
 
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 particlesArray[i].update();
                 particlesArray[i].draw();
             }
-            requestAnimationFrame(animateParticles); // Runs indefinitely
+            requestAnimationFrame(animateParticles); 
         }
 
         // Start animation
