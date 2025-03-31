@@ -95,6 +95,7 @@ body::after {
     border-radius: 50px;
     padding: 10px 20px;
     width: auto;
+    display: flex;
 }
 
 .nav ul {
@@ -572,160 +573,6 @@ body::after {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .contact-layout {
-        gap: 2rem;
-    }
-}
-
-/* Tablets and larger phones (up to 768px) */
-@media (max-width: 768px) {
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    }
-    
-            body {
-                padding-left: 15px !important;
-                padding-right: 15px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box;
-                max-width: 100%;
-            }
-        
-        
-    
-        .nav {
-            display: none !important;
-        }
-    
-    
-    .nav ul {
-        gap: 1rem;
-        justify-content: center;
-    }
-    .nav a {
-        font-size: 0.9rem;
-    }
-    .section {
-        padding: 1.5rem;
-    }
-    .hero-text {
-        padding: 40px 10px;
-    }
-    .hero-text h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
-    }
-    .hero-text h1::before {
-        width: 150px;
-        height: 150px;
-    }
-    .hero-text .subtitle {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    .cta-button {
-        padding: 10px 20px;
-    }
-    p {
-        font-size: 1rem;
-    }
-    .section-languages,
-    .section-programming-languages {
-        padding: 4rem 1rem;
-    }
-    .languages-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1.5rem;
-    }
-    .language-item {
-        padding: 1rem;
-    }
-    .language-item i {
-        font-size: clamp(1.5rem, 3vw, 2.5rem);
-    }
-    .language-item span {
-        font-size: clamp(0.8rem, 1.2vw, 1rem);
-    }
-    .section-projects {
-        padding: 4rem 1rem;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .project-card {
-        padding: 1.5rem;
-    }
-    .project-content h3 {
-        font-size: 1.3rem;
-    }
-    .project-content p {
-        font-size: 0.9rem;
-    }
-    .section-title {
-        font-size: clamp(2rem, 4vw, 4rem);
-        margin-bottom: 3rem;
-    }
-    .section-bento {
-        padding: 4rem 1rem;
-    }
-    .bento-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem;
-    }
-    .bento-item.large {
-        grid-column: auto;
-        padding: 1.5rem;
-    }
-    .bento-item {
-        padding: 1.5rem;
-        min-height: 200px;
-    }
-    .bento-item h3 {
-        font-size: 1.3rem;
-    }
-    .bento-item p {
-        font-size: 0.9rem;
-    }
-    .bento-item i {
-        font-size: 2rem;
-    }
-    .section-contact {
-        padding: 4rem 1rem;
-    }
-    .contact-layout {
-        gap: 2rem;
-    }
-    .cv-card-container {
-        max-width: 350px;
-    }
-    .download-cv {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-    .social-links {
-        gap: 1.5rem;
-    }
-    .social-icon {
-        font-size: clamp(2rem, 4vw, 3rem);
-    }
-    .thank-you {
-        font-size: 1.5rem;
-        margin-top: 2rem;
-    }
-
-
 /* Responsive adjustments for tablets (up to 1024px) */
 @media (max-width: 1024px) {
     .projects-grid {
@@ -769,7 +616,7 @@ body::after {
     }
 
     .nav {
-        display: none !important;
+        display: none !important; /* Hide navbar on mobile */
     }
 
     .section {
@@ -821,25 +668,26 @@ body::after {
     .languages-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-        gap: 1rem; /* Reduced gap for better fit */
+        gap: 1rem;
         width: 100%;
         max-width: 100%;
-        justify-items: center; /* Center items in each grid cell */
+        justify-content: center; /* Center all rows */
+        justify-items: center; /* Center items within each cell */
     }
 
     .language-item {
-        padding: 0.75rem; /* Reduced padding to fit 3 items */
+        padding: 0.75rem;
         width: 100%;
-        max-width: 110px; /* Fit 3 items in 390px viewport (390px - 30px padding - 2rem gap ≈ 110px per item) */
+        max-width: 110px;
         box-sizing: border-box;
     }
 
     .language-item i {
-        font-size: clamp(1.2rem, 2.5vw, 2rem); /* Slightly smaller icons */
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
     }
 
     .language-item span {
-        font-size: clamp(0.7rem, 1vw, 0.9rem); /* Smaller text to fit */
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
     }
 
     .section-projects {
@@ -854,25 +702,25 @@ body::after {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem; /* Reduced gap for better proportion */
         width: 100%;
         max-width: 100%;
     }
 
     .project-card {
-        padding: 1.5rem;
+        padding: 1rem; /* Reduced padding */
         width: 100%;
-        max-width: 320px;
+        max-width: 280px; /* Smaller max-width to match other sections */
         margin: 0 auto;
         box-sizing: border-box;
     }
 
     .project-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.1rem; /* Slightly smaller heading */
     }
 
     .project-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem; /* Slightly smaller text */
     }
 
     .section-title {
